@@ -1,0 +1,35 @@
+body {
+    max-width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+main {
+    
+    margin: auto;
+}
+
+.calculator-section {
+    text-align: center;
+
+}
+
+.calculator {
+    width: 800px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px auto;
+    border: 1px solid black;
+    
+}
+.mb-3 {
+    width: 200px;
+}
+
+.btn {
+    font-size: 20px;
+    padding: 10px;
+}
