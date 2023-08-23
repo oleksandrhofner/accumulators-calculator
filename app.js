@@ -3,10 +3,25 @@ const wattage = document.querySelector("input.wattage-input");
 const hour = document.querySelector("input.hour-input");
 const voltage = document.querySelector("input.voltage-input");
 const capacityFactor = document.querySelector("input.capacityFactor-input");
+
+// const of results
 const resultCapacityText = document.querySelector("h5.resultCapacityText");
+
+// const button
 const btnCapacity = document.querySelector("button.btn-capacity");
 
 btnCapacity.addEventListener("click", findCapacity);
+
+// consts of radiobuttons
+const radbtn1 = document.querySelector("#flexRadioDefault1");
+const radbtn2 = document.querySelector("#flexRadioDefault2");
+const radbtn3 = document.querySelector("#flexRadioDefault3");
+const radbtn4 = document.querySelector("#flexRadioDefault4");
+const radbtn5 = document.querySelector("#flexRadioDefault5");
+
+if (radbtn1.checked) {
+  capacityFactor.value = "0.8";
+}
 
 // function to find capacity
 function findCapacity(){
@@ -28,7 +43,6 @@ function findCapacity(){
     console.log("Ah:", Math.ceil(capacityOfAccumulator));
     resultCapacityText.innerHTML = `Необхідна ємність акумулятора: ${capacityOfAccumulator} Ah.`;
   }
- 
 }
 
 
