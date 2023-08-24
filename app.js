@@ -20,7 +20,7 @@ const radbtn4 = document.querySelector("#flexRadioDefault4");
 const radbtn5 = document.querySelector("#flexRadioDefault5");
 
 radbtn1.addEventListener("click", ()=>{
-    capacityFactor.value = "0.5";
+    capacityFactor.value = "0.8";
 });
 
 radbtn2.addEventListener("click", ()=>{
@@ -28,15 +28,15 @@ radbtn2.addEventListener("click", ()=>{
 });
 
 radbtn3.addEventListener("click", ()=>{
-  capacityFactor.value = "0.8";
+  capacityFactor.value = "0.85";
 });
 
 radbtn4.addEventListener("click", ()=>{
-  capacityFactor.value = "0.8";
+  capacityFactor.value = "0.95";
 });
 
 radbtn5.addEventListener("click", ()=>{
-  capacityFactor.value = "1";
+  capacityFactor.value = "0.99";
 })
 
 // function to find capacity
