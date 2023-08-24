@@ -61,10 +61,19 @@ function findCapacity(){
       resultCapacityText.innerHTML = `Необхідна ємність акумулятора: ${capacityOfAccumulator} Ah.`;
     }
   }
-    
-   
-
 }
 
+// button that opens and closing calculators tab
+const btnCalculatorCapacity = document.querySelector("button.btn-calculator-capacity");
+const btnCalculatorCycle = document.querySelector("button.btn-calculator-cycle");
+
+const calculatorSection = document.querySelector("section.calculator-section");
+btnCalculatorCapacity.addEventListener("click", ()=>{
+  calculatorSection.style.display = "block";
+});
+
+btnCalculatorCycle.addEventListener("click", ()=>{
+  calculatorSection.style.display = "none";
+});
 
 
