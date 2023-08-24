@@ -19,17 +19,30 @@ const radbtn3 = document.querySelector("#flexRadioDefault3");
 const radbtn4 = document.querySelector("#flexRadioDefault4");
 const radbtn5 = document.querySelector("#flexRadioDefault5");
 
-if (radbtn1.checked) {
+radbtn1.addEventListener("click", ()=>{
+    capacityFactor.value = "0.5";
+});
+
+radbtn2.addEventListener("click", ()=>{
   capacityFactor.value = "0.8";
-}
+});
+
+radbtn3.addEventListener("click", ()=>{
+  capacityFactor.value = "0.8";
+});
+
+radbtn4.addEventListener("click", ()=>{
+  capacityFactor.value = "0.8";
+});
+
+radbtn5.addEventListener("click", ()=>{
+  capacityFactor.value = "1";
+})
 
 // function to find capacity
 function findCapacity(){
-  let w = wattage.value;
-  let h = hour.value;
-  let v = voltage.value;
-  let k = capacityFactor.value;
-  if (typeof w !== "number" && typeof h !== "number" && typeof v !== "number" && typeof k !== "number") {
+  
+  if (wattage.value == "" || hour.value == "" || voltage.value == "" || capacityFactor.value == "") {
     resultCapacityText.innerHTML = "Неправильні дані";
     resultCapacityText.style.color = "red";
     wattage.value = "";
@@ -39,10 +52,18 @@ function findCapacity(){
     wattage.focus();
     setTimeout(()=>{resultCapacityText.innerHTML= "";},4000);
   } else {
-    const capacityOfAccumulator = Math.ceil(Number((w * h) / (v * k)));
-    console.log("Ah:", Math.ceil(capacityOfAccumulator));
-    resultCapacityText.innerHTML = `Необхідна ємність акумулятора: ${capacityOfAccumulator} Ah.`;
+    const capacityOfAccumulator = Math.ceil(Number((wattage * hour) / (voltage * capacityFactor)));
+    if (isNaN(capacityOfAccumulator)) {
+      resultCapacityText.style.color = "red";
+      resultCapacityText.innerHTML = "Введено помилкові дані";
+    } else {
+      console.log("Ah:", Math.ceil(capacityOfAccumulator));
+      resultCapacityText.innerHTML = `Необхідна ємність акумулятора: ${capacityOfAccumulator} Ah.`;
+    }
   }
+    
+   
+
 }
 
 
