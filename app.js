@@ -9,7 +9,7 @@ const resultCapacityText = document.querySelector("h5.resultCapacityText");
 
 // const button
 const btnCapacity = document.querySelector("button.btn-capacity");
-
+const hourClick = document.querySelector("input.hour-input");
 btnCapacity.addEventListener("click", findCapacity);
 
 // consts of radiobuttons
@@ -62,7 +62,14 @@ function findCapacity(){
       resultCapacityText.innerHTML = `Необхідна ємність акумулятора: ${capacityOfAccumulator} Ah.`;
     }
   }
+  hourClick.addEventListener("click", ()=>{
+    const capacityOfAccumulator = Math.ceil(Number((wattage.value * hour.value) / (voltage.value * capacityFactor.value)));
+    console.log("Ah:", capacityOfAccumulator);
+    resultCapacityText.innerHTML = `Необхідна ємність акумулятора: ${capacityOfAccumulator} Ah.`;
+  });
 }
+
+
 
 
 
