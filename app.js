@@ -52,16 +52,19 @@ function findCapacity(){
     wattage.focus();
     setTimeout(()=>{resultCapacityText.innerHTML= "";},4000);
   } else {
-    const capacityOfAccumulator = Math.ceil(Number((wattage * hour) / (voltage * capacityFactor)));
+    const capacityOfAccumulator = Math.ceil(Number((wattage.value * hour.value) / (voltage.value * capacityFactor.value)));
+   
     if (isNaN(capacityOfAccumulator)) {
       resultCapacityText.style.color = "red";
       resultCapacityText.innerHTML = "Введено помилкові дані";
     } else {
-      console.log("Ah:", Math.ceil(capacityOfAccumulator));
+      console.log("Ah:", capacityOfAccumulator);
       resultCapacityText.innerHTML = `Необхідна ємність акумулятора: ${capacityOfAccumulator} Ah.`;
     }
   }
 }
+
+
 
 // button that opens and closing calculators tab
 const btnCalculatorCapacity = document.querySelector("button.btn-calculator-capacity");
