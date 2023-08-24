@@ -86,4 +86,12 @@ btnCalculatorCycle.addEventListener("click", ()=>{
   calculatorSection.style.display = "none";
 });
 
+const btnClear = document.querySelector("button.btn-clear");
+btnClear.addEventListener("click", ()=>{
+  wattage.value="";
+  hour.value="";
+  voltage.value="";
+  capacityFactor.value="";
+  resultCapacityText.innerHTML = "";
+});
 
