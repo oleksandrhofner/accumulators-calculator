@@ -182,7 +182,7 @@
       <section style="display: none;" class="cycle-section">
         <div class="calculator">
           
-          <h1>Підрахунок кількості циклів зарядки для акумулятора</h1>
+          <h1>Підрахунок залишку кількості циклів зарядки для акумулятора</h1>
           <!-- Start radiobuttons -->
           <div class="form-check">
             <input
@@ -248,78 +248,39 @@
           <!-- Start div calculation cycle -->
           <div class="mb-3">
             <label for="basic-url" class="form-label"
-              >Потужність,
-              <abbr title="Потужність підключеного обладнання">Вт</abbr></label
-            >
+              >Скільки разів на день ви заряджаєте акумулятор? </label>
             <div class="input-group mb-3">
               <input
                 type="number"
-                class="form-control wattage-input"
+                class="form-control charge-day-input"
                 aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-default"
                 min="1"
                 max="5000"
                 placeholder="1-5000"
               />
-              <span class="input-group-text">W</span>
             </div>
           </div>
           <div class="mb-3">
             <label for="basic-url" class="form-label"
-              >час навантаження, год</label
-            >
+              >Скільки пройшло днів</label>
             <div class="input-group mb-3">
               <input
                 type="number"
-                class="form-control hour-input"
+                class="form-control day-input"
                 aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-default"
                 min="1"
-                max="10000"
-                placeholder="1-10000"
+                max="5000"
+                placeholder="1-5000"
               />
-              <span class="input-group-text">H</span>
-            </div>
-          </div>
-          <div class="mb-3">
-            <label for="basic-url" class="form-label"
-              >напруга акумулятора, B</label
-            >
-            <div class="input-group mb-3">
-              <input
-                type="number"
-                class="form-control voltage-input"
-                aria-label="Sizing example input"
-                aria-describedby="inputGroup-sizing-default"
-                min="1"
-                max="24"
-                placeholder="1-24"
-              />
-              <span class="input-group-text">V</span>
-            </div>
-          </div>
-          <div class="mb-3">
-            <label for="basic-url" class="form-label">коефіцієнт ємності</label>
-            <div class="input-group mb-3">
-              <input
-                type="number"
-                class="form-control capacityFactor-input"
-                aria-label="Sizing example input"
-                aria-describedby="inputGroup-sizing-default"
-                step="0.1"
-                min="0.1"
-                max="1"
-                placeholder="0.1-1"
-                
-              />
-              <span class="input-group-text">K</span>
             </div>
           </div>
           <div class="d-grid gap-2 d-md-block">
             <button class="btn-cycle btn btn-primary" type="button">
               Визначити кількість циклів
             </button>
-            <button class="btn-clear btn btn-primary btn-cycle" type="button">
+            <button class="btn-clear-cycle btn btn-primary btn-cycle" type="button">
               Очистити
             </button>
           </div>

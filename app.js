@@ -88,7 +88,7 @@ btnCalculatorCapacity.addEventListener("click", ()=>{
 btnCalculatorCycle.addEventListener("click", ()=>{
   calculatorSection.style.display = "none";
   cycleSection.style.display = "block";
-  alert("Увага повний цикл зарядки рахується від 20% залишку ємності до повного заряджання акумулятора");
+  // alert("Увага повний цикл зарядки рахується від 20% залишку ємності до повного заряджання акумулятора");
 });
 
 const btnClear = document.querySelector("button.btn-clear");
@@ -108,3 +108,18 @@ const radbtn7 = document.querySelector("#flexRadioDefault7");
 const radbtn8 = document.querySelector("#flexRadioDefault8");
 const radbtn9 = document.querySelector("#flexRadioDefault9");
 const radbtn10 = document.querySelector("#flexRadioDefault10");
+
+const chargeDay = document.querySelector(".charge-day-input");
+const dayAmount = document.querySelector(".day-input");
+const btnCycle = document.querySelector(".btn-cycle");
+const btnClearCycle = document.querySelector(".btn-clear");
+
+btnCycle.addEventListener("click", remainingCycle);
+
+function remainingCycle() {
+  const fullPercent = 1;
+  const remainPercent = 0.2;
+  const usedCycle = chargeDay.value * dayAmount.value;
+  const countCycle = (usedCycle * fullPercent) / remainPercent;
+  console.log("countCycle", countCycle);
+}
