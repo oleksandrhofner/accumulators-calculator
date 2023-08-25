@@ -9,6 +9,11 @@ main {
     margin: auto;
 }
 
+.nav-buttons {
+    text-align: center;
+    margin: 30px;
+}
+
 .calculator-section {
     text-align: center;
 
@@ -32,4 +37,23 @@ main {
 .btn {
     font-size: 20px;
     padding: 10px;
+}
+
+.btn-calculator-cycle {
+    background-color: green;
+    border: none;
+    margin-left: 30px;
+}
+
+.btn-calculator-cycle:hover {
+    background-color: rgb(2, 97, 2);
+}
+
+.btn-cycle {
+    background-color: green;
+    border: none;
+}
+
+.btn-cycle:hover {
+    background-color: rgb(2, 97, 2);
 }

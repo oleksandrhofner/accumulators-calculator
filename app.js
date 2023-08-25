@@ -1,3 +1,4 @@
+// section CAPACITY
 // const of inputs
 const wattage = document.querySelector("input.wattage-input");
 const hour = document.querySelector("input.hour-input");
@@ -78,12 +79,16 @@ const btnCalculatorCapacity = document.querySelector("button.btn-calculator-capa
 const btnCalculatorCycle = document.querySelector("button.btn-calculator-cycle");
 
 const calculatorSection = document.querySelector("section.calculator-section");
+const cycleSection = document.querySelector("section.cycle-section");
 btnCalculatorCapacity.addEventListener("click", ()=>{
   calculatorSection.style.display = "block";
+  cycleSection.style.display = "none";
 });
 
 btnCalculatorCycle.addEventListener("click", ()=>{
   calculatorSection.style.display = "none";
+  cycleSection.style.display = "block";
+  alert("Увага повний цикл зарядки рахується від 20% залишку ємності до повного заряджання акумулятора");
 });
 
 const btnClear = document.querySelector("button.btn-clear");
@@ -95,3 +100,11 @@ btnClear.addEventListener("click", ()=>{
   resultCapacityText.innerHTML = "";
 });
 
+// section CYCLE
+
+// consts of radiobuttons
+const radbtn6 = document.querySelector("#flexRadioDefault6");
+const radbtn7 = document.querySelector("#flexRadioDefault7");
+const radbtn8 = document.querySelector("#flexRadioDefault8");
+const radbtn9 = document.querySelector("#flexRadioDefault9");
+const radbtn10 = document.querySelector("#flexRadioDefault10");
