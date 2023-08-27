@@ -90,7 +90,3 @@ footer {
     padding: 20px;
     color: #fff;
 }
-
-.error-border:focus {
-    border: 2px solid red;
-}
