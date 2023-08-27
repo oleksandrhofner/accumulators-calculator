@@ -130,6 +130,11 @@ btnCalculatorCycle.addEventListener("click", () => {
 
 const btnClear = document.querySelector("button.btn-clear");
 btnClear.addEventListener("click", () => {
+  radbtn1.checked = false;
+  radbtn2.checked = false;
+  radbtn3.checked = false;
+  radbtn4.checked = false;
+  radbtn5.checked = false;
   wattage.value = "";
   hour.value = "";
   voltage.value = "";
@@ -205,6 +210,11 @@ function remainingCycle() {
 }
 
 btnClearCycle.addEventListener("click", () => {
+  radbtn6.checked = false;
+  radbtn7.checked = false;
+  radbtn8.checked = false;
+  radbtn9.checked = false;
+  radbtn10.checked = false;
   chargeDay.value = "";
   dayAmount.value = "";
   resultCycleText.innerHTML = "";
