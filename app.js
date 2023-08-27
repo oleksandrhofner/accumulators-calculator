@@ -40,6 +40,52 @@ radbtn5.addEventListener("click", () => {
   capacityFactor.value = "0.99";
 });
 
+// add reg exp for the inputs
+const regExp = /[0-9]/g;
+wattage.addEventListener("input", () => {
+  if (regExp.test(wattage.value) === false) {
+    wattage.focus();
+    wattage.classList.add("error-border");
+    wattage.value = "";
+    setTimeout(() => {
+      wattage.classList.remove("error-border");
+    }, 2000);
+  }
+});
+
+hour.addEventListener("input", () => {
+  if (regExp.test(hour.value) === false) {
+    hour.focus();
+    hour.classList.add("error-border");
+    hour.value = "";
+    setTimeout(() => {
+      hour.classList.remove("error-border");
+    }, 2000);
+  }
+});
+
+voltage.addEventListener("input", () => {
+  if (regExp.test(voltage.value) === false) {
+    voltage.focus();
+    voltage.classList.add("error-border");
+    voltage.value = "";
+    setTimeout(() => {
+      voltage.classList.remove("error-border");
+    }, 2000);
+  }
+});
+
+capacityFactor.addEventListener("input", () => {
+  if (regExp.test(capacityFactor.value) === false) {
+    capacityFactor.focus();
+    capacityFactor.classList.add("error-border");
+    capacityFactor.value = "";
+    setTimeout(() => {
+      capacityFactor.classList.remove("error-border");
+    }, 2000);
+  }
+});
+
 // function to find capacity
 function findCapacity() {
   if (
@@ -129,6 +175,30 @@ const btnCycle = document.querySelector(".btn-cycle");
 const btnClearCycle = document.querySelector(".btn-clear-cycle");
 const resultCycleText = document.querySelector("h5.resultCycleText");
 
+// add reg exp for the inputs
+
+chargeDay.addEventListener("input", () => {
+  if (regExp.test(chargeDay.value) === false) {
+    chargeDay.focus();
+    chargeDay.classList.add("error-border");
+    chargeDay.value = "";
+    setTimeout(() => {
+      chargeDay.classList.remove("error-border");
+    }, 2000);
+  }
+});
+
+dayAmount.addEventListener("input", () => {
+  if (regExp.test(dayAmount.value) === false) {
+    dayAmount.focus();
+    dayAmount.classList.add("error-border");
+    dayAmount.value = "";
+    setTimeout(() => {
+      dayAmount.classList.remove("error-border");
+    }, 2000);
+  }
+});
+
 btnCycle.addEventListener("click", remainingCycle);
 
 function remainingCycle() {
@@ -152,12 +222,12 @@ function remainingCycle() {
     countCycle = fullCycle - usedCycle;
   }
   console.log("countCycle", countCycle);
-  resultCycleText.innerHTML = `Приблизна кількість залишку циклів зарядки для акумулятора становить ${'\&#8776'} ${countCycle}`;
+  resultCycleText.innerHTML = `Приблизна кількість залишку циклів зарядки для акумулятора становить ${"&#8776"} ${countCycle}`;
   resultCycleText.style.textAlign = "center";
 }
 
-btnClearCycle.addEventListener("click", ()=>{
+btnClearCycle.addEventListener("click", () => {
   chargeDay.value = "";
   dayAmount.value = "";
   resultCycleText.innerHTML = "";
-})
+});
