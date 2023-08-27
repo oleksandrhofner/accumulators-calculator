@@ -41,20 +41,26 @@ radbtn5.addEventListener("click", () => {
 });
 
 // add reg exp for the inputs
-const regExp = /[0-9]+$/gi;
-wattage.addEventListener("input", () => {
+const regExp = /[0-9]+/g;
+wattage.addEventListener("keydown", () => {
   if (regExp.test(wattage.value) === false) {
     wattage.value = "";
   }
 });
 
-voltage.addEventListener("input", () => {
+hour.addEventListener("keydown", () => {
+  if (regExp.test(hour.value) === false) {
+    hour.value = "";
+  }
+});
+
+voltage.addEventListener("keydown", () => {
   if (regExp.test(voltage.value) === false) {
     voltage.value = "";
   }
 });
 
-capacityFactor.addEventListener("input", () => {
+capacityFactor.addEventListener("keydown", () => {
   if (regExp.test(capacityFactor.value) === false) {
     capacityFactor.value = "";
   }
@@ -160,14 +166,14 @@ const resultCycleText = document.querySelector("h5.resultCycleText");
 
 // add reg exp for the inputs
 
-chargeDay.addEventListener("input", () => {
+chargeDay.addEventListener("keydown", () => {
   if (regExp.test(chargeDay.value) === false) {
     chargeDay.focus();
     chargeDay.value = "";
   }
 });
 
-dayAmount.addEventListener("input", () => {
+dayAmount.addEventListener("keydown", () => {
   if (regExp.test(dayAmount.value) === false) {
     dayAmount.focus();
     dayAmount.value = "";
