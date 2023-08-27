@@ -41,36 +41,36 @@ radbtn5.addEventListener("click", () => {
 });
 
 // add reg exp for the inputs
-const regExp = /\d{1,5}/g;
+const regExp = /[0-9]+?/g;
 wattage.addEventListener("keyup", () => {
   if (regExp.test(wattage.value) === false) {
     wattage.classList.add("error-border");
+    setTimeout(()=>{wattage.classList.remove("error-border");},500);
     wattage.value = "";
-    setTimeout(()=>{wattage.classList.remove("error-border");},2000);
   }
 });
 
 hour.addEventListener("keyup", () => {
   if (regExp.test(hour.value) === false) {
     hour.classList.add("error-border");
+    setTimeout(()=>{hour.classList.remove("error-border");},500);
     hour.value = "";
-    setTimeout(()=>{hour.classList.remove("error-border");},2000);
   }
 });
 
 voltage.addEventListener("keyup", () => {
   if (regExp.test(voltage.value) === false) {
     voltage.classList.add("error-border");
+    setTimeout(()=>{voltage.classList.remove("error-border");},500);
     voltage.value = "";
-    setTimeout(()=>{voltage.classList.remove("error-border");},2000);
   }
 });
 
 capacityFactor.addEventListener("keyup", () => {
   if (regExp.test(capacityFactor.value) === false) {
     capacityFactor.classList.add("error-border");
+    setTimeout(()=>{capacityFactor.classList.remove("error-border");},500);
     capacityFactor.value = "";
-    setTimeout(()=>{capacityFactor.classList.remove("error-border");},2000);
   }
 });
 
@@ -177,16 +177,16 @@ const resultCycleText = document.querySelector("h5.resultCycleText");
 chargeDay.addEventListener("keyup", () => {
   if (regExp.test(chargeDay.value) === false) {
     chargeDay.classList.add("error-border");
+    setTimeout(()=>{chargeDay.classList.remove("error-border");},500);
     chargeDay.value = "";
-    setTimeout(()=>{chargeDay.classList.remove("error-border");},2000);
   }
 });
 
 dayAmount.addEventListener("keyup", () => {
   if (regExp.test(dayAmount.value) === false) {
     dayAmount.classList.add("error-border");
+    setTimeout(()=>{dayAmount.classList.remove("error-border");},500);
     dayAmount.value = "";
-    setTimeout(()=>{dayAmount.classList.remove("error-border");},2000);
   }
 });
 
