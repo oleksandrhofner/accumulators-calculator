@@ -126,7 +126,7 @@ const radbtn10 = document.querySelector("#flexRadioDefault10");
 const chargeDay = document.querySelector(".charge-day-input");
 const dayAmount = document.querySelector(".day-input");
 const btnCycle = document.querySelector(".btn-cycle");
-const btnClearCycle = document.querySelector(".btn-clear");
+const btnClearCycle = document.querySelector(".btn-clear-cycle");
 const resultCycleText = document.querySelector("h5.resultCycleText");
 
 btnCycle.addEventListener("click", remainingCycle);
@@ -155,3 +155,9 @@ function remainingCycle() {
   resultCycleText.innerHTML = `Приблизна кількість залишку циклів зарядки для акумулятора становить ${'\&#8776'} ${countCycle}`;
   resultCycleText.style.textAlign = "center";
 }
+
+btnClearCycle.addEventListener("click", ()=>{
+  chargeDay.value = "";
+  dayAmount.value = "";
+  resultCycleText.innerHTML = "";
+})
