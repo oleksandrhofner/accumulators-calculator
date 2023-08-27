@@ -20,6 +20,7 @@ main {
 div.calculator {
     text-align: center;
     padding: 20px;
+    margin-bottom: 50px;
 }
 .calculator-section {
     text-align: center;
@@ -39,6 +40,15 @@ div.calculator {
 }
 .mb-3 {
     width: 200px;
+}
+
+.result-container {
+    border-radius: 10px;
+    margin: auto;
+    padding: 10px;
+    width: max-content;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    border: 1px solid rgb(0, 204, 255);
 }
 
 .btn {
@@ -73,6 +83,7 @@ footer {
     width: 100%;
     background-color: #272323;
     height: 200px;
+    margin-top: 50px;
 }
 
 .footer-section {

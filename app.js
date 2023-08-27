@@ -41,48 +41,22 @@ radbtn5.addEventListener("click", () => {
 });
 
 // add reg exp for the inputs
-const regExp = /[0-9]/g;
+const regExp = /[0-9]+$/gi;
 wattage.addEventListener("input", () => {
   if (regExp.test(wattage.value) === false) {
-    wattage.focus();
-    wattage.classList.add("error-border");
     wattage.value = "";
-    setTimeout(() => {
-      wattage.classList.remove("error-border");
-    }, 2000);
-  }
-});
-
-hour.addEventListener("input", () => {
-  if (regExp.test(hour.value) === false) {
-    hour.focus();
-    hour.classList.add("error-border");
-    hour.value = "";
-    setTimeout(() => {
-      hour.classList.remove("error-border");
-    }, 2000);
   }
 });
 
 voltage.addEventListener("input", () => {
   if (regExp.test(voltage.value) === false) {
-    voltage.focus();
-    voltage.classList.add("error-border");
     voltage.value = "";
-    setTimeout(() => {
-      voltage.classList.remove("error-border");
-    }, 2000);
   }
 });
 
 capacityFactor.addEventListener("input", () => {
   if (regExp.test(capacityFactor.value) === false) {
-    capacityFactor.focus();
-    capacityFactor.classList.add("error-border");
     capacityFactor.value = "";
-    setTimeout(() => {
-      capacityFactor.classList.remove("error-border");
-    }, 2000);
   }
 });
 
@@ -94,6 +68,7 @@ function findCapacity() {
     voltage.value == "" ||
     capacityFactor.value == ""
   ) {
+    resultCapacityText.classList.add("result-container");
     resultCapacityText.innerHTML = "Неправильні дані";
     resultCapacityText.style.color = "red";
     wattage.value = "";
@@ -112,9 +87,11 @@ function findCapacity() {
     );
 
     if (isNaN(capacityOfAccumulator)) {
+      resultCapacityText.classList.add("result-container");
       resultCapacityText.style.color = "red";
       resultCapacityText.innerHTML = "Введено помилкові дані";
     } else {
+      resultCapacityText.classList.add("result-container");
       console.log("Ah:", capacityOfAccumulator);
       resultCapacityText.innerHTML = `Необхідна ємність акумулятора: ${capacityOfAccumulator} Ah.`;
     }
@@ -158,6 +135,7 @@ btnClear.addEventListener("click", () => {
   voltage.value = "";
   capacityFactor.value = "";
   resultCapacityText.innerHTML = "";
+  resultCapacityText.classList.remove("result-container");
 });
 
 // section CYCLE
@@ -180,22 +158,14 @@ const resultCycleText = document.querySelector("h5.resultCycleText");
 chargeDay.addEventListener("input", () => {
   if (regExp.test(chargeDay.value) === false) {
     chargeDay.focus();
-    chargeDay.classList.add("error-border");
     chargeDay.value = "";
-    setTimeout(() => {
-      chargeDay.classList.remove("error-border");
-    }, 2000);
   }
 });
 
 dayAmount.addEventListener("input", () => {
   if (regExp.test(dayAmount.value) === false) {
     dayAmount.focus();
-    dayAmount.classList.add("error-border");
     dayAmount.value = "";
-    setTimeout(() => {
-      dayAmount.classList.remove("error-border");
-    }, 2000);
   }
 });
 
@@ -222,11 +192,13 @@ function remainingCycle() {
     countCycle = fullCycle - usedCycle;
   }
   if (isNaN(countCycle) || chargeDay.value == "" || dayAmount.value == "") {
+    resultCycleText.classList.add("result-container");
     resultCycleText.style.color = "red";
     resultCycleText.innerHTML = "Неправильно введені дані!";
     resultCycleText.style.textAlign = "center";
   } else {
     console.log("countCycle", countCycle);
+    resultCycleText.classList.add("result-container");
     resultCycleText.innerHTML = `Приблизна кількість залишку циклів зарядки для акумулятора становить ${"&#8776"} ${countCycle}`;
     resultCycleText.style.textAlign = "center";
   }
@@ -236,4 +208,5 @@ btnClearCycle.addEventListener("click", () => {
   chargeDay.value = "";
   dayAmount.value = "";
   resultCycleText.innerHTML = "";
+  resultCycleText.classList.remove("result-container");
 });
