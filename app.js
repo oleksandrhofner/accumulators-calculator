@@ -221,9 +221,15 @@ function remainingCycle() {
     fullCycle = 10000;
     countCycle = fullCycle - usedCycle;
   }
-  console.log("countCycle", countCycle);
-  resultCycleText.innerHTML = `Приблизна кількість залишку циклів зарядки для акумулятора становить ${"&#8776"} ${countCycle}`;
-  resultCycleText.style.textAlign = "center";
+  if (isNaN(countCycle) || chargeDay.value == "" || dayAmount.value == "") {
+    resultCycleText.style.color = "red";
+    resultCycleText.innerHTML = "Неправильно введені дані!";
+    resultCycleText.style.textAlign = "center";
+  } else {
+    console.log("countCycle", countCycle);
+    resultCycleText.innerHTML = `Приблизна кількість залишку циклів зарядки для акумулятора становить ${"&#8776"} ${countCycle}`;
+    resultCycleText.style.textAlign = "center";
+  }
 }
 
 btnClearCycle.addEventListener("click", () => {
