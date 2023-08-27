@@ -41,28 +41,36 @@ radbtn5.addEventListener("click", () => {
 });
 
 // add reg exp for the inputs
-const regExp = /[0-9]+/g;
-wattage.addEventListener("keydown", () => {
+const regExp = /\d{1,5}/g;
+wattage.addEventListener("keyup", () => {
   if (regExp.test(wattage.value) === false) {
+    wattage.classList.add("error-border");
     wattage.value = "";
+    setTimeout(()=>{wattage.classList.remove("error-border");},2000);
   }
 });
 
-hour.addEventListener("keydown", () => {
+hour.addEventListener("keyup", () => {
   if (regExp.test(hour.value) === false) {
+    hour.classList.add("error-border");
     hour.value = "";
+    setTimeout(()=>{hour.classList.remove("error-border");},2000);
   }
 });
 
-voltage.addEventListener("keydown", () => {
+voltage.addEventListener("keyup", () => {
   if (regExp.test(voltage.value) === false) {
+    voltage.classList.add("error-border");
     voltage.value = "";
+    setTimeout(()=>{voltage.classList.remove("error-border");},2000);
   }
 });
 
-capacityFactor.addEventListener("keydown", () => {
+capacityFactor.addEventListener("keyup", () => {
   if (regExp.test(capacityFactor.value) === false) {
+    capacityFactor.classList.add("error-border");
     capacityFactor.value = "";
+    setTimeout(()=>{capacityFactor.classList.remove("error-border");},2000);
   }
 });
 
@@ -166,17 +174,19 @@ const resultCycleText = document.querySelector("h5.resultCycleText");
 
 // add reg exp for the inputs
 
-chargeDay.addEventListener("keydown", () => {
+chargeDay.addEventListener("keyup", () => {
   if (regExp.test(chargeDay.value) === false) {
-    chargeDay.focus();
+    chargeDay.classList.add("error-border");
     chargeDay.value = "";
+    setTimeout(()=>{chargeDay.classList.remove("error-border");},2000);
   }
 });
 
-dayAmount.addEventListener("keydown", () => {
+dayAmount.addEventListener("keyup", () => {
   if (regExp.test(dayAmount.value) === false) {
-    dayAmount.focus();
+    dayAmount.classList.add("error-border");
     dayAmount.value = "";
+    setTimeout(()=>{dayAmount.classList.remove("error-border");},2000);
   }
 });
 
