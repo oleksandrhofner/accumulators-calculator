@@ -80,13 +80,21 @@ div.calculator {
 }
 
 footer {
-    width: 100%;
+    max-width: 1900px;
     background-color: #272323;
-    height: 200px;
+    height: 250px;
     margin-top: 50px;
+    margin: auto;
 }
 
 .footer-section {
+
     padding: 20px;
     color: #fff;
+}
+
+.information-text {
+    font-size: 18px;
+    font-style:italic;
+    font-weight: bold;
 }
