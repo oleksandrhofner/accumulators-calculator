@@ -44,7 +44,7 @@ radbtn5.addEventListener("click", () => {
 const regExp = /[0-9]+?/g;
 wattage.addEventListener("keyup", () => {
   if (regExp.test(wattage.value) === false) {
-    wattage.classList.add("error-border");
+    setTimeout(()=>{wattage.classList.add("error-border");},100);
     setTimeout(()=>{wattage.classList.remove("error-border");},500);
     wattage.value = "";
   }
@@ -52,7 +52,7 @@ wattage.addEventListener("keyup", () => {
 
 hour.addEventListener("keyup", () => {
   if (regExp.test(hour.value) === false) {
-    hour.classList.add("error-border");
+    setTimeout(()=>{hour.classList.add("error-border");},100);
     setTimeout(()=>{hour.classList.remove("error-border");},500);
     hour.value = "";
   }
@@ -60,7 +60,7 @@ hour.addEventListener("keyup", () => {
 
 voltage.addEventListener("keyup", () => {
   if (regExp.test(voltage.value) === false) {
-    voltage.classList.add("error-border");
+    setTimeout(()=>{voltage.classList.add("error-border");},100);
     setTimeout(()=>{voltage.classList.remove("error-border");},500);
     voltage.value = "";
   }
@@ -68,7 +68,7 @@ voltage.addEventListener("keyup", () => {
 
 capacityFactor.addEventListener("keyup", () => {
   if (regExp.test(capacityFactor.value) === false) {
-    capacityFactor.classList.add("error-border");
+    setTimeout(()=>{capacityFactor.classList.add("error-border");},100);
     setTimeout(()=>{capacityFactor.classList.remove("error-border");},500);
     capacityFactor.value = "";
   }
@@ -176,7 +176,7 @@ const resultCycleText = document.querySelector("h5.resultCycleText");
 
 chargeDay.addEventListener("keyup", () => {
   if (regExp.test(chargeDay.value) === false) {
-    chargeDay.classList.add("error-border");
+    setTimeout(()=>{chargeDay.classList.add("error-border");},100);
     setTimeout(()=>{chargeDay.classList.remove("error-border");},500);
     chargeDay.value = "";
   }
@@ -184,7 +184,7 @@ chargeDay.addEventListener("keyup", () => {
 
 dayAmount.addEventListener("keyup", () => {
   if (regExp.test(dayAmount.value) === false) {
-    dayAmount.classList.add("error-border");
+    setTimeout(()=>{dayAmount.classList.add("error-border");},100);
     setTimeout(()=>{dayAmount.classList.remove("error-border");},500);
     dayAmount.value = "";
   }
